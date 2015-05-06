@@ -1,0 +1,8 @@
+name: GroceryTotes
+version: 0.0.1
+author: Stephen Turley <turley714@gmail.com>
+description: Create and share shopping lists
+environment:
+  sdk: '>=1.10.0 <2.0.0'
+dependencies:
+
