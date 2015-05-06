@@ -7,6 +7,7 @@ main(){
     var underTest = new GroceryList();
 
     expect(underTest, new isInstanceOf<GroceryList>() );
+    fail('testing a failure condition');
   });
 
 }
