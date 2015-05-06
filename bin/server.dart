@@ -1,10 +1,28 @@
-import 'package:redstone/server.dart' as server;
+import 'package:rpc/rpc.dart';
+import 'dart:io';
 
-@server.Route('/')
-helloWorld() => 'Hello, World!';
 
-main() {
-  server.setupConsoleLog();
-  server.start();
+class Message {
+  String message = "Hello Shoppers!";
+  Message();
+}
+
+@ApiClass(version: 'v1')
+class Hello {
+  @ApiMethod(method: 'GET', path: 'hello')
+  Message hello() {
+    return new Message();
+  }
+}
+
+final ApiServer _apiServer = new ApiServer();
+
+main() async {
+  _apiServer.addApi(new Hello());
+  HttpServer httpServer = await HttpServer.bind(InternetAddress.ANY_IP_V4, 8080);
+  httpServer.listen(_apiServer.httpRequestHandler);
+
+  print('Server listening on http://${httpServer.address.host}:'
+  '${httpServer.port}');
 }
 
