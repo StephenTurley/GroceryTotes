@@ -5,4 +5,6 @@ description: Create and share shopping lists
 environment:
   sdk: '>=1.10.0 <2.0.0'
 dependencies:
+  redstone: ^0.5.20
+  test: ^0.12.0
 
