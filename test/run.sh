@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-dart ../bin/GroceryTotesServer.dart
+dart bin/GroceryTotesServer.dart
