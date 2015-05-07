@@ -1,5 +1,6 @@
-import 'package:grocery_totes/grocery_list.dart';
+import 'package:grocery_totes/domain/grocery_list.dart';
 import 'package:test/test.dart';
+
 
 main(){
 

@@ -77,6 +77,10 @@ packages:
     description: mime
     source: hosted
     version: "0.9.3"
+  mockito:
+    description: mockito
+    source: hosted
+    version: "0.8.2"
   path:
     description: path
     source: hosted
