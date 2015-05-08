@@ -1,13 +1,23 @@
 import 'package:grocery_totes/domain/grocery_domain.dart';
 import 'package:test/test.dart';
+import 'package:mockito/mockito.dart';
 
 
 main(){
 
-  test('Should be able to contruct a GroceryList', () {
-    var underTest = new GroceryList();
+  GroceryList undertest;
 
-    expect(underTest, new isInstanceOf<GroceryList>() );
+  setUp((){
+    undertest = new GroceryList();
   });
 
+  test('Should add a GroceryItem', (){
+    undertest.add(item);
+
+    expect(undertest.get(0), same(item));
+  });
 }
+
+class MockItem extends Mock implements GroceryItem {}
+
+var item = new MockItem();
