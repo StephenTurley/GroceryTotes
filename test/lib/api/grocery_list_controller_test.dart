@@ -10,7 +10,7 @@ main() {
     GroceryListController undertest = new GroceryListController(repository);
     when(repository.getGroceryList()).thenReturn(groceryList);
 
-    var result = undertest.getGroceryList();
+    GroceryList result = undertest.getGroceryList();
 
     expect(result, same(groceryList));
   });
@@ -18,7 +18,7 @@ main() {
   test("Should save item to grocery list when addItem is called", () {
     GroceryListController undertest = new GroceryListController(repository);
 
-    undertest.saveItem(item);
+    GroceryList result = undertest.saveItem(item);
 
     verify(repository.saveItem(item));
   });

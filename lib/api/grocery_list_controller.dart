@@ -14,7 +14,7 @@ class GroceryListController{
     return _repository.getGroceryList();
   }
 
-  void saveItem(GroceryItem item) {
+  GroceryList saveItem(GroceryItem item) {
     return _repository.saveItem(item);
   }
 }
