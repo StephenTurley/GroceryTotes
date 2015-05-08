@@ -2,20 +2,20 @@ library domain;
 
 class GroceryList {
 
-  final List<GroceryItem> _items;
+  final List<GroceryItem> items;
 
-  GroceryList() : _items = new List();
+  GroceryList() : items = new List();
 
 
   void add(GroceryItem item){
-    _items.add(item);
+    items.add(item);
   }
 
   GroceryItem get(num index){
-    return _items[index];
+    return items[index];
   }
 }
 
 class GroceryItem {
-  GroceryItem();
+  String name;
 }

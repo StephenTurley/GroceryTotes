@@ -1,25 +1,15 @@
 import 'package:rpc/rpc.dart';
+import 'package:grocery_totes/api/grocery_list_controller.dart';
+import 'package:grocery_totes/repository/repository.dart';
 import 'dart:io';
-
-
-
-class Message {
-  String message = "Hello Shoppers!";
-  Message();
-}
-
-@ApiClass(version: 'v1')
-class Hello {
-  @ApiMethod(method: 'GET', path: 'hello')
-  Message hello() {
-    return new Message();
-  }
-}
 
 final ApiServer _apiServer = new ApiServer();
 
 main() async {
-  _apiServer.addApi(new Hello());
+  GroceryListRepository repository = new GroceryListRepository();
+
+  _apiServer.addApi(new GroceryListController(repository));
+
   HttpServer httpServer = await HttpServer.bind(InternetAddress.ANY_IP_V4, 8080);
   httpServer.listen(_apiServer.httpRequestHandler);
 

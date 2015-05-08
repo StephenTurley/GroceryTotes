@@ -6,3 +6,8 @@ main(args) => grind(args);
 test() {
   new PubApp.local('test').run([]);
 }
+
+@Task('Run')
+run() {
+  new PubApp.local('server').run([]);
+}
