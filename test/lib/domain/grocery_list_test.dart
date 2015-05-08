@@ -1,4 +1,4 @@
-import 'package:grocery_totes/domain/grocery_list.dart';
+import 'package:grocery_totes/domain/grocery_domain.dart';
 import 'package:test/test.dart';
 
 
