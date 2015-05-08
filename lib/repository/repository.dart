@@ -4,8 +4,19 @@ import 'package:grocery_totes/domain/grocery_domain.dart';
 
 class GroceryListRepository  {
 
-  final GroceryList _list = new GroceryList();
-  
+  GroceryList _list = new GroceryList();
+
+  GroceryListRepository({GroceryList list}) : _list = list {
+    if(_list == null) {
+      _list = new GroceryList();
+    }
+  }
+
   GroceryList getGroceryList() => _list;
-  GroceryList saveItem(GroceryItem item) => throw new UnimplementedError();
+  GroceryList saveItem(GroceryItem item){
+
+    _list.add(item);
+
+    return _list;
+  }
 }
