@@ -6,8 +6,14 @@ import 'package:mockito/mockito.dart';
 
 main() {
 
+  GroceryListController undertest;
+
+  setUp((){
+    undertest = new GroceryListController(repository);
+  });
+
+
   test("Should return grocery list when getGroceryList is called", () {
-    GroceryListController undertest = new GroceryListController(repository);
     when(repository.getGroceryList()).thenReturn(groceryList);
 
     GroceryList result = undertest.getGroceryList();
@@ -16,8 +22,6 @@ main() {
   });
 
   test("Should save item to grocery list when addItem is called", () {
-    GroceryListController undertest = new GroceryListController(repository);
-
     GroceryList result = undertest.saveItem(item);
 
     verify(repository.saveItem(item));
