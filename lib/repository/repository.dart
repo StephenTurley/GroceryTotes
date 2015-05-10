@@ -4,7 +4,7 @@ import 'package:grocery_totes/domain/grocery_domain.dart';
 
 class GroceryListRepository  {
 
-  GroceryList _list = new GroceryList();
+  GroceryList _list;
 
   GroceryListRepository({GroceryList list}) : _list = list {
     if(_list == null) {
