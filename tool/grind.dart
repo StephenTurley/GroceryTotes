@@ -1,4 +1,4 @@
-import 'package:grinder/grinder.dart';
+import '../packages/grinder/grinder.dart';
 
 main(args) => grind(args);
 

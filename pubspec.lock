@@ -17,10 +17,18 @@ packages:
     description: barback
     source: hosted
     version: "0.15.2+4"
+  browser:
+    description: browser
+    source: hosted
+    version: "0.10.0+2"
   cli_util:
     description: cli_util
     source: hosted
     version: "0.0.1+1"
+  code_transformers:
+    description: code_transformers
+    source: hosted
+    version: "0.2.9"
   collection:
     description: collection
     source: hosted
@@ -29,6 +37,14 @@ packages:
     description: crypto
     source: hosted
     version: "0.9.0"
+  csslib:
+    description: csslib
+    source: hosted
+    version: "0.12.0"
+  dart_style:
+    description: dart_style
+    source: hosted
+    version: "0.1.8"
   discoveryapis_generator:
     description: discoveryapis_generator
     source: hosted
@@ -53,6 +69,10 @@ packages:
     description: grinder
     source: hosted
     version: "0.7.0"
+  html:
+    description: html
+    source: hosted
+    version: "0.12.1+1"
   http:
     description: http
     source: hosted
@@ -65,6 +85,10 @@ packages:
     description: http_server
     source: hosted
     version: "0.9.5+1"
+  initialize:
+    description: initialize
+    source: hosted
+    version: "0.6.1"
   logging:
     description: logging
     source: hosted
@@ -81,10 +105,26 @@ packages:
     description: mockito
     source: hosted
     version: "0.8.2"
+  observe:
+    description: observe
+    source: hosted
+    version: "0.13.1"
   path:
     description: path
     source: hosted
     version: "1.3.5"
+  polymer:
+    description: polymer
+    source: hosted
+    version: "0.16.3+1"
+  polymer_expressions:
+    description: polymer_expressions
+    source: hosted
+    version: "0.13.1"
+  polymer_interop:
+    description: polymer_interop
+    source: hosted
+    version: "0.1.1"
   pool:
     description: pool
     source: hosted
@@ -113,6 +153,14 @@ packages:
     description: shelf_web_socket
     source: hosted
     version: "0.0.1+2"
+  smoke:
+    description: smoke
+    source: hosted
+    version: "0.3.3"
+  source_maps:
+    description: source_maps
+    source: hosted
+    version: "0.10.1"
   source_span:
     description: source_span
     source: hosted
@@ -125,6 +173,10 @@ packages:
     description: string_scanner
     source: hosted
     version: "0.1.3+1"
+  template_binding:
+    description: template_binding
+    source: hosted
+    version: "0.14.0+2"
   test:
     description: test
     source: hosted
@@ -145,6 +197,10 @@ packages:
     description: watcher
     source: hosted
     version: "0.9.5"
+  web_components:
+    description: web_components
+    source: hosted
+    version: "0.11.4"
   when:
     description: when
     source: hosted
