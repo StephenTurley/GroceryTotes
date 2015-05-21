@@ -1,5 +1,5 @@
 window.helloText = function() {
-  return 'Welcome to WonderLan!';
+  return 'Welcome to grocery-totes!';
 };
 
 window.hello = function() {
