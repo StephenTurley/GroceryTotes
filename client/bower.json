@@ -1,0 +1,20 @@
+{
+  "name": "wonder-lan",
+  "version": "0.0.0",
+  "homepage": "https://github.com/StephenTurley/wonder-lan",
+  "authors": [
+    "Stephen Turley <turley714@gmail.com>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "angular": "~1.3.15"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "/vendor/bower",
+    "test",
+    "tests"
+  ]
+}

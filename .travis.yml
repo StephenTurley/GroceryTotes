@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+- 0.1
+script: cd client && npm install && lineman build && lineman spec-ci && cd ..
+deploy:
+  provider: heroku
+  app: grocery-totes
+  on:
+    repo: StephenTurley/grocery_totes
+  skip_cleanup: true
+

@@ -1,0 +1,17 @@
+{
+  "name": "grocery_totes_web",
+  "description": "An HTML/JS/CSS app",
+  "version": "0.0.1",
+  "private": true,
+  "author": "Stephen Turley",
+  "devDependencies": {
+    "lineman": "~0.36.3",
+    "grunt": "~0.4.5",
+    "lineman-bower": "0.0.5"
+  },
+  "scripts": {
+    "start": "lineman run",
+    "test": "lineman spec-ci",
+    "production": "lineman clean build && npm i express@3 && node -e \"var e = require('express'), a = e(); a.use(e.static('dist/')); a.listen(process.env.PORT)\""
+  }
+}
