@@ -1,5 +1,5 @@
 {
-  "name": "grocery_totes",
+  "name": "grocery-totes",
   "version": "0.0.1",
   "dependencies": {
     "express": "~4.12.4"

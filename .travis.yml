@@ -4,8 +4,10 @@ node_js:
 script: cd client && npm install && lineman build && lineman spec-ci && cd ..
 deploy:
   provider: heroku
+  api_key:
+    secure: egjRDBKDf4SJ+W6yfF4XeCKGiaEZ2FC8xHnYrMYyw8h9DvC2GoET3IELjizFxnk4kEXvK575KlqmyITrT5IDdKXphAXwPFAhRC9Ff67k6zB40yLcq7wQx0LyRwkEDUV8UzLylBcdFkjDnzwA+Z377dRe7El39g79H224igHuwdDcgIs83tkFFfyW5HYeC+WcLnSRC6ts/6FgIoSfsviPyEw6x1Se3MHIvU7G4uzA5JCWV4/nePkuXHSo9Oj6TbAr2V1Q725tTE0x8TiP7JUwx7Rm33dt2pC1uMTF5p4jfQk4zDf7pfADTbfUyYW2jQ8dR5ZgXv/Tkporbvvqxgj2MnNCpVOiy9A0XzFtSkuxtMmgUe2cmFcII/mGDqsJeO4VOk9IpEoA5nlUcEiB5RKQwfACgHJKiy3YhFCp3tINcYqQFvLFsUd8jsjNXuR2gbM6PUaHXQsUtQNFWPPe/UAJxvope8z8fOeZyZFowirPWy6+MbU4YNZqOvsAzxXTuxNyinKkmBdMAm8c+LgzOj59YVhhkE36ietmBjS3K6mZbRAluLyBRnvBhPhtd+gPOCyQsuWgAeZ4ayLzCjrNb6qGU2LHNp2ber2+MNtNbssNzo4kymR+87K+5c1yOJipOSgVwLfexe+NupHEnKRMUlasciMdk7Fp+/I76au87BDxThg=
   app: grocery-totes
   on:
-    repo: StephenTurley/grocery_totes
+    repo: StephenTurley/grocery-totes
   skip_cleanup: true
 
