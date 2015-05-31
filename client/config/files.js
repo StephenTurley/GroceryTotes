@@ -8,9 +8,18 @@
 module.exports = function(lineman) {
   //Override file patterns here
   return {
-
+    css:{
+      vendor: [
+        "vendor/bower/foundation/css/foundation.css",
+        "vendor/bower/foundation/css/normalize.css",
+        "vendor/css/**/*.js"
+      ]  
+    },
     js: {
       vendor: [
+          "vendor/bower/jquery/dist/jquery.js",
+          "vendor/bower/fastclick/lib/fastclick.js",
+          "vendor/bower/foundation/js/foundation.js",
           "vendor/bower/angular/angular.js",
           "vendor/js/**/*.js"
       ]
