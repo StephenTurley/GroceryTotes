@@ -21,6 +21,7 @@ module.exports = function(lineman) {
           "vendor/bower/fastclick/lib/fastclick.js",
           "vendor/bower/foundation/js/foundation.js",
           "vendor/bower/angular/angular.js",
+          "vendor/bower/angular-route/angular-route.js",
           "vendor/js/**/*.js"
       ]
     }

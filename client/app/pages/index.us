@@ -1,26 +1,13 @@
 <!DOCTYPE html>
 <html ng-app="app">
   <head>
+    <base href="/"/>
     <title><%= pkg.name %></title>
 
     <link rel="stylesheet" type="text/css" href="<%= css %>" media="all" />
   </head>
   <body>
-     <div class="content" ng-view>
-      <section class="grocery-list-container">
-        <ul class="grocery-list">
-          <li class="item">
-            <h4>stuff here</h4>
-          </li>
-          <li class="item">
-            <h4>stuff here</h4>
-          </li>
-          <li class="item">
-            <h4>stuff here</h4>
-          </li>
-        </ul>
-      </section>
-     </div>
+     <div class="content" ng-view></div>
     <script type="text/javascript" src="<%= js %>"></script>
   </body>
 </html>
