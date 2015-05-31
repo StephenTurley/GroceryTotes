@@ -34,7 +34,7 @@ li.item {
   html {
     font-size: 150%;
   }
-  .item {
+  li.item {
     margin:10px 0;
     height: 160px;
   }
