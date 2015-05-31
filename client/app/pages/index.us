@@ -7,16 +7,18 @@
   </head>
   <body>
      <div class="content">
-      <section class="grocery-list">
-        <div class="item">
-          <h4>stuff here</h4>
-         </div>
-         <div class="item">
-          <h4>stuff here</h4>
-         </div>
-         <div class="item">
-          <h4>stuff here</h4>
-         </div>
+      <section class="grocery-list-container">
+        <ul class="grocery-list">
+          <li class="item">
+            <h4>stuff here</h4>
+          </li>
+          <li class="item">
+            <h4>stuff here</h4>
+          </li>
+          <li class="item">
+            <h4>stuff here</h4>
+          </li>
+        </ul>
       </section>
      </div>
     <script type="text/javascript" src="<%= js %>"></script>

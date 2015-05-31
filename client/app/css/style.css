@@ -3,10 +3,14 @@
   border: 1px solid #dedede;
 }
 
-.grocery-list {
+.grocery-list-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.grocery-list {
+  list-style-type: none;
+ 
 }
 
 .item {
