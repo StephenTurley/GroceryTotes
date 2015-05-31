@@ -8,9 +8,15 @@
   <body>
      <div class="content">
       <section class="grocery-list">
-        <div class="item">stuff here</div>
-        <div class="item">stuff here</div>
-        <div class="item">stuff here</div>
+        <div class="item">
+          <h4>stuff here</h4>
+         </div>
+         <div class="item">
+          <h4>stuff here</h4>
+         </div>
+         <div class="item">
+          <h4>stuff here</h4>
+         </div>
       </section>
      </div>
     <script type="text/javascript" src="<%= js %>"></script>

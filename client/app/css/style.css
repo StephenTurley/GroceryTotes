@@ -18,17 +18,17 @@
 }
 
 .content {
-  width: 960px;
+  width: 1080px;
   margin: auto;
   justify-content: space-around;
 }
 
-@media all and (max-width: 960px) {
+@media all and (max-width: 1080px) {
   .content {
     width: 100%;
   }
-  body {
-    font-size: 1.5em;
+  html {
+    font-size: 150%;
   }
 }
 
