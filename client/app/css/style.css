@@ -14,7 +14,7 @@
   height: 100px;
   margin: 3px;
   flex: none;
-  background-color: blue;
+  background-color: rgb(181, 181, 255);
 }
 
 .content {
