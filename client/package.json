@@ -5,8 +5,9 @@
   "private": true,
   "author": "Stephen Turley",
   "devDependencies": {
-    "lineman": "~0.36.3",
     "grunt": "~0.4.5",
+    "lineman": "~0.36.3",
+    "lineman-angular": "^0.3.0",
     "lineman-bower": "0.0.5"
   },
   "scripts": {
