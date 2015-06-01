@@ -1,13 +1,7 @@
 <section class="grocery-list-container">
 	<ul class="grocery-list">
-	  <li class="item">
-	    <h4>stuff here</h4>
-	  </li>
-	  <li class="item">
-	    <h4>stuff here</h4>
-	  </li>
-	  <li class="item">
-	    <h4>stuff here</h4>
+	  <li class="item" ng-repeat="item in items">
+	    <h4>{{ item.name }}</h4>
 	  </li>
 	</ul>
 </section>
