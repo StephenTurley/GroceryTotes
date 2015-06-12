@@ -1,7 +1,9 @@
-angular.module('app').controller('GroceryListController', function($scope){
-	$scope.items = [
-		{name : 'Eggs'},
-		{name : 'Milk'},
-		{name : 'Bread'}
-	];
-});
+angular.module('app').controller('GroceryListController',['$scope','groceryList', function($scope, groceryList){
+	
+	$scope.fetchList = function(){
+		groceryList.fetchList().then(function(data){
+			$scope.items = data;
+		});
+	};
+	
+}]);

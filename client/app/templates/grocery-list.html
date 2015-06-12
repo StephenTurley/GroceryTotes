@@ -1,5 +1,5 @@
 <section class="grocery-list-container">
-	<ul class="grocery-list">
+	<ul class="grocery-list" data-ng-init="fetchList()">
 	  <li class="item" ng-repeat="item in items">
 	    <h4>{{ item.name }}</h4>
 	  </li>

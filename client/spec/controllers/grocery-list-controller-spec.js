@@ -1,20 +1,54 @@
 describe('GroceryListController', function(){
 	
+	var $rootScope;
 	var $controller;
+	var deferred;
 	
 	beforeEach(function(){
 		module('app');
 	});
 	
-	beforeEach(inject(function(_$controller_){
+	beforeEach(inject(function(_$rootScope_, _$controller_, $q){
 		$controller = _$controller_;
+		$rootScope = _$rootScope_;
+		deferred = $q.defer();
 	}));
 	
-	describe('$scope.items', function(){
-		it('should have 3 items', function(){
-			var $scope = {};
-			var controller = $controller('GroceryListController', {$scope: $scope});
-			expect($scope.items.length).toBe(3);
+	describe('groceryListController.fetchList', function(){
+		
+		var $scope, groceryList;
+		
+		beforeEach(function(){
+			$scope = {};
+			
+			groceryList = {
+				fetchList : function(){}
+			};
+			
+			var controller = $controller('GroceryListController', {$scope: $scope, groceryList: groceryList});
+			
+			spyOn(groceryList, 'fetchList').andReturn(deferred.promise);
+		});
+		
+		afterEach(function(){
+			groceryList.fetchList.reset();
+		});
+
+		it('should call grocery list service', function(){
+			
+			$scope.fetchList();
+			
+			expect(groceryList.fetchList).toHaveBeenCalled();
+		});
+		
+		it('should set items on success', function(){
+			deferred.resolve('foo');
+						
+			$scope.fetchList();
+			$rootScope.$digest();
+			
+			expect($scope.items).toBe('foo');
+			
 		});	
 	});	
 });
