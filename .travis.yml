@@ -1,7 +1,7 @@
 language: node_js
 node_js:
 - 0.1
-script: npm install && gulp test && gem install sass && cd client && npm install && lineman clean build spec-ci --verbose && cd ..
+script: gem install sass && cd client && npm install && lineman clean build spec-ci --verbose && cd .. && npm install && gulp test
 deploy:
   provider: heroku
   api_key:
