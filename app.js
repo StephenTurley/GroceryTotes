@@ -2,13 +2,11 @@ var express = require('express');
 var path = require('path');
 var app = express();
 
-var routes = require('./routes');
-
-exports.app = app;
+var index = require('./routes/index');
 
 app.use(express.static(path.join(__dirname,'client/dist/')));
 
-app.get('/', routes.index);
+app.get('/', index.get);
 
 var port = process.env.PORT || 8080;
 

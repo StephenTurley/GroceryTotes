@@ -5,7 +5,7 @@ var srcs = {
 	test : 'spec/**/*-spec.js'
 };
 
-gulp.task('spec-server', function(){
+gulp.task('test', function(){
 	return gulp.src(srcs.test)
 			.pipe(jasmine());
 });
