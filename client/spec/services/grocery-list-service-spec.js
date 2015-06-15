@@ -30,7 +30,7 @@ describe('GroceryListService', function(){
 			expect(angular.isFunction(groceryList.fetchList)).toBe(true);
 		});
 		
-		it('should return a promise', function(){
+		it('should return a promise from http.get("api/list")', function(){
 			var result = groceryList.fetchList();
 			$httpBackend.flush();
 			

@@ -5,7 +5,7 @@ describe('GroceryListController', function(){
 	var deferred;
 	
 	var mockPromise = {
-		data: "foo"
+		data: 'foo'
 	};
 	
 	beforeEach(function(){
