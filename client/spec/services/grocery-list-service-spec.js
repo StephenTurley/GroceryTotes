@@ -1,15 +1,27 @@
-describe('GroceryListController', function(){
+describe('GroceryListService', function(){
 	
 	var groceryList;
 	var $rootScope;
+	var $httpBackend;
+	
+	var mockList = [
+			{name: 'bread'},
+			{name: 'milk'},
+			{name: 'eggs'}
+		];
 	
 	beforeEach(function(){
 		module('app');
 		
-		inject(function(_groceryList_, _$rootScope_){
+		inject(function(_groceryList_, _$rootScope_, _$httpBackend_){
 			groceryList = _groceryList_;
 			$rootScope = _$rootScope_;
+			$httpBackend = _$httpBackend_;
 		});
+		
+		$httpBackend.when('GET', '/api/list')
+					.respond(mockList);
+		
 	});
 	
 	describe('groceryList.fetchList', function(){
@@ -18,18 +30,19 @@ describe('GroceryListController', function(){
 			expect(angular.isFunction(groceryList.fetchList)).toBe(true);
 		});
 		
-		it('should return a promise with 3 items', function(){
+		it('should return a promise', function(){
 			var result = groceryList.fetchList();
+			$httpBackend.flush();
 			
 			var items = [];
 			
-			result.then(function(data){
-				items = data;
+			result.then(function(res){
+				items = res.data;
 			});
 			
 			$rootScope.$digest();
 			
-			expect(items.length).toBe(3);
+			expect(items).toEqual(mockList);
 		});
 	});
 });

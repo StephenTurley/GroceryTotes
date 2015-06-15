@@ -4,6 +4,10 @@ describe('GroceryListController', function(){
 	var $controller;
 	var deferred;
 	
+	var mockPromise = {
+		data: "foo"
+	};
+	
 	beforeEach(function(){
 		module('app');
 	});
@@ -42,7 +46,7 @@ describe('GroceryListController', function(){
 		});
 		
 		it('should set items on success', function(){
-			deferred.resolve('foo');
+			deferred.resolve(mockPromise);
 						
 			$scope.fetchList();
 			$rootScope.$digest();
