@@ -1,7 +1,8 @@
 var express = require('express');
 var path = require('path');
 
-var app = exports.app = express();
+var app = express();
+module.exports = app;
 
 
 var index = require('./routes/index');
@@ -20,6 +21,6 @@ function start(){
     });
 };
 
-exports.start = start;
+app.start = start;
 
 

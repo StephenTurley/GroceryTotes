@@ -1,6 +1,6 @@
 var request = require('supertest');
 
-var app = require('../app').app;
+var app = require('../app');
 
 
 describe('GET /', function(){
