@@ -9,6 +9,7 @@
     "path": "~0.11.14",
     "gulp": "~3.9.0",
     "gulp-jasmine": "~2.0.1",
-    "jasmine-expect": "~2.0.0-beta1"
+    "jasmine-expect": "~2.0.0-beta1",
+    "supertest": "~1.0.1"
   }
 }
