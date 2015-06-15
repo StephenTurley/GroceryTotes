@@ -1,1 +1,1 @@
-web: node grocery_totes.js
+web: node grocery-totes.js
