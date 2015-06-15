@@ -1,12 +1,14 @@
-var express = require('express'),
-    path = require('path'),
-    app = express();
+var express = require('express');
+var path = require('path');
+var app = express();
+
+var routes = require('./routes');
+
+exports.app = app;
 
 app.use(express.static(path.join(__dirname,'client/dist/')));
 
-app.get('/', function(req, res){
-    res.render('index.html');
-});
+app.get('/', routes.index);
 
 var port = process.env.PORT || 8080;
 
