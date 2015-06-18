@@ -1,5 +1,6 @@
 var gulp = require('gulp');
-var jasmine =  require('gulp-jasmine');
+var $ = require('gulp-load-plugins')();
+
 
 var srcs = {
 	test : 'spec/**/*-spec.js'
@@ -7,5 +8,5 @@ var srcs = {
 
 gulp.task('test', function(){
 	return gulp.src(srcs.test)
-			.pipe(jasmine());
+			.pipe($.jasmine());
 });
