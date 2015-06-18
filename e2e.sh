@@ -2,7 +2,6 @@
 
 export PORT=8080
 
-
 node grocery-totes.js &
 PID=$!
 
