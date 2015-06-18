@@ -17,5 +17,13 @@ module.exports = {
     // app.get('/api/greeting/:message', function(req, res){
     //   res.json({ message: "OK, "+req.params.message });
     // });
+    
+    app.get('/api/list', function(req, res){
+      res.json([
+        {name: "stub1"},
+        {name: "stub2"},
+        {name: "stub3"}
+      ]);
+    });
   }
 };
