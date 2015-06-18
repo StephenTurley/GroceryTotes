@@ -15,6 +15,5 @@ gulp.task('test', function(){
 
 gulp.task('e2e', function(){
 	return gulp.src(srcs.e2e)
-		.pipe($.jasmine())
-		.pipe($.debug());
+		.pipe($.jasmine());
 });
