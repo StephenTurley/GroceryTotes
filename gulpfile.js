@@ -1,7 +1,5 @@
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
-var forever =  require('forever');
-
 
 var srcs = {
 	test : 'spec/**/*-spec.js',
