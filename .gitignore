@@ -35,3 +35,4 @@ client/build/Release
 node_modules
 
 /typings
+.settings

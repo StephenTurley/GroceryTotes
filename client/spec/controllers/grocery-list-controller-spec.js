@@ -1,3 +1,4 @@
+/// <reference path="../../../typings/jasmine/jasmine.d.ts"/>
 describe('GroceryListController', function(){
 	
 	var $rootScope;
@@ -29,7 +30,7 @@ describe('GroceryListController', function(){
 				fetchList : function(){}
 			};
 			
-			var controller = $controller('GroceryListController', {$scope: $scope, groceryList: groceryList});
+			$controller('GroceryListController', {$scope: $scope, groceryList: groceryList});
 			
 			spyOn(groceryList, 'fetchList').andReturn(deferred.promise);
 		});
