@@ -6,7 +6,8 @@ deploy:
   provider: heroku
   api_key:
     secure: flK1YYypVg/33cpqgkQVXc/KKU6S/tkcBRzkQBRAgfL3E7ZlBn/1lLU4JKPrTo2M1HC4N6EKc4Il2rbC3UUt/vq/BDdpB57OaQtJNlN+2VGF7ftug6+YKdWZ323vEwc7mAGtCXU1L81RXxY+2nsdGolYFKKPRuVA8jkjVn0YCUyqld6+y/ZMaVtMqEUdEyWWWh8rjAcbA0q7lekTS0G5EFt4rRNHTBrNoZYUJOEJybjNHTvjPgmV/TzJf2Ar0hR/eiuagPMPOF7fz7kYO4H2L/mwrTfWMW6YydP4Xh+nZQmhIuJgoz6NVrojEjr+d0WqyMvcwZhE5P3uv5hZl96XnIqBANQhKWwwrfZNZcryygOKr8Sgga6QlruXy+IgTCG5D1hQpU5wjfvJdv83RhaTMZREQnkP/JFRcye6fC3/Npww/5gTcaF+A6gTFYAENBQckKlRS7qqF3lXH7eHnXMWUVuEARUs/OZksLwHEEkj35WLOMJl+c3+kXl+9XOjg1kyImOcW6Qm7ZN/I/rCgs8BhCmS2eN5oeXM9n+tHkR3wetgwotkj1Xf1fEiHJlqz7QCMSyGl6h46CoeCfmseda3dgGc2QxN2lvE0FFK09FftN5Y/mR5xSFi2sylblzXoCZ4YdAhttAP7KK7fEFIvPvlYbJjKVOMOAQ/ZVjcqf5rRns=
-  app: grocery-totes
+  app: 
+    master: grocery-totes
   on:
     repo: StephenTurley/grocery-totes
   skip_cleanup: true
