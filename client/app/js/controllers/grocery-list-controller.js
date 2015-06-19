@@ -7,7 +7,9 @@ angular.module('app').controller('GroceryListController',['$scope','groceryList'
 	};
 	
 	$scope.addItem = function(item){
-		groceryList.addItem(item);
+		groceryList.addItem(item).then(function(){
+			$scope.fetchList();
+		});
 	};
 	
 }]);
