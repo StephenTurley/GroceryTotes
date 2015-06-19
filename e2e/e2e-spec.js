@@ -12,4 +12,8 @@ describe('index', function(){
 	it('should load', function(){
 		browser.assert.success();		
 	});
+	
+	it('grocery list should contain items', function(){
+		browser.assert.elements('li.item', 3);
+	});
 });
