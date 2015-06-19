@@ -5,5 +5,9 @@ angular.module('app').factory('groceryList', ['$http', function($http){
 		return $http.get('/api/list');
 	};
 	
+	service.addItem = function(item){
+		return $http.post('api/list/item', item);
+	};
+	
 	return service;
 }]);
