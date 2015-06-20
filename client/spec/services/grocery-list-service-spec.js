@@ -71,7 +71,7 @@ describe('GroceryListService', function(){
 			expect($rootScope.$broadcast).not.toHaveBeenCalled();
 		});
 		
-		it('should emit itemAdded event")', function(){
+		it('should broadcast itemAdded event', function(){
 			var result = groceryList.addItem(mockItem);
 			$httpBackend.flush();
 			
@@ -80,4 +80,5 @@ describe('GroceryListService', function(){
 			expect($rootScope.$broadcast).toHaveBeenCalledWith('itemAdded');
 		});
 	});
+	
 });
