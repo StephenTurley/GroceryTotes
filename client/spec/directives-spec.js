@@ -11,7 +11,7 @@ describe('directives', function() {
 	$httpBackend = _$httpBackend_;
   }));
   
-  describe('add-item', function(){
+  describe('item-form', function(){
 	  
 	  it('render the template', function() {
 	    var element = $compile('<item-form></item-form>')($rootScope);
