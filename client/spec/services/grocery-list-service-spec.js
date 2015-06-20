@@ -59,6 +59,7 @@ describe('GroceryListService', function(){
 			expect(items).toEqual(mockList);
 		});
 	});
+	
 	describe('addItem', function(){
 		
 		it('should be a function', function(){
@@ -79,6 +80,7 @@ describe('GroceryListService', function(){
 			
 			expect($rootScope.$broadcast).toHaveBeenCalledWith('itemAdded');
 		});
+		
 	});
 	
 });

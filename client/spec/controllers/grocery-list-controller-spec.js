@@ -1,3 +1,4 @@
+/* global inject */
 /// <reference path="../../../typings/jasmine/jasmine.d.ts"/>
 describe('GroceryListController', function(){
 	
