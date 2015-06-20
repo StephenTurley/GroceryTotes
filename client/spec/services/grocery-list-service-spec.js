@@ -29,10 +29,16 @@ describe('GroceryListService', function(){
 					
 		$httpBackend.when('POST', 'api/list/item')
 					.respond(mockItem);
+					
+		spyOn($rootScope,'$broadcast');
 		
 	});
 	
-	describe('groceryList.fetchList', function(){
+	afterEach(function(){
+		$rootScope.$broadcast.calls = [];
+	});
+	
+	describe('fetchList', function(){
 		
 		it('should be a function', function(){
 			expect(angular.isFunction(groceryList.fetchList)).toBe(true);
@@ -53,25 +59,25 @@ describe('GroceryListService', function(){
 			expect(items).toEqual(mockList);
 		});
 	});
-	describe('groceryList.addItem', function(){
+	describe('addItem', function(){
 		
 		it('should be a function', function(){
 			expect(angular.isFunction(groceryList.addItem)).toBe(true);
 		});
 		
-		it('should return a promise from http.post("api/list/item")', function(){
+		it('should not emit itemAdded event until promise is resolved', function(){
+			var result = groceryList.addItem(mockItem);
+			
+			expect($rootScope.$broadcast).not.toHaveBeenCalled();
+		});
+		
+		it('should emit itemAdded event")', function(){
 			var result = groceryList.addItem(mockItem);
 			$httpBackend.flush();
 			
-			var item = {};
-			
-			result.then(function(res){
-				item = res.data;
-			});
-			
 			$rootScope.$digest();
 			
-			expect(item).toEqual(mockItem);
+			expect($rootScope.$broadcast).toHaveBeenCalledWith('itemAdded');
 		});
 	});
 });

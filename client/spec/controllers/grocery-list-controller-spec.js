@@ -17,7 +17,7 @@ describe('GroceryListController', function(){
 		module('app');
 	});
 	
-	beforeEach(inject(function(_$rootScope_, _$controller_, $q){
+	beforeEach(inject(function(_$controller_,_$rootScope_, $q){
 		$controller = _$controller_;
 		$rootScope = _$rootScope_;
 		deferred = $q.defer();
@@ -27,24 +27,21 @@ describe('GroceryListController', function(){
 		$scope = {};
 		
 		groceryList = {
-			fetchList : function(){},
-			addItem : function(item){}
+			fetchList : function(){}
 		};
 		
 		$controller('GroceryListController', {$scope: $scope, groceryList: groceryList});
 		
 		spyOn(groceryList, 'fetchList').andReturn(deferred.promise);
-		spyOn(groceryList, "addItem").andReturn(deferred.promise);
 		spyOn($scope, 'fetchList').andCallThrough();
 	});
 	
 	afterEach(function(){
 		groceryList.fetchList.calls = [];
-		groceryList.addItem.calls = [];
 		$scope.fetchList.calls = [];
 	});
 	
-	describe('groceryListController.fetchList', function(){
+	describe('fetchList', function(){
 		
 		afterEach(function(){
 			groceryList.fetchList.reset();
@@ -64,28 +61,14 @@ describe('GroceryListController', function(){
 			$rootScope.$digest();
 			
 			expect($scope.items[0].name).toBe('foo');
-		});	
-	});
-	
-	describe('groceryListController.addItem', function(){
-		
-		var item = { name: "foo" };
-		
-		it('should call groceryList.addItem', function(){
-			$scope.addItem(item);
-			
-			expect(groceryList.addItem).toHaveBeenCalledWith(item);
 		});
 		
-		it('should call $scope.fetchList', function(){
-			deferred.resolve(mockPromise);
+		it('should be called on itemAdded event', function(){
+			$rootScope.$broadcast('itemAdded');
 			
-			$scope.addItem(item);
 			$rootScope.$digest();
 			
 			expect($scope.fetchList).toHaveBeenCalled();
 		});
 	});
-	
-		
 });
