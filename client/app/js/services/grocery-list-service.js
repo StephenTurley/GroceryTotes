@@ -7,7 +7,7 @@ angular.module('app').factory('groceryList', ['$http','$rootScope',
 		};
 		
 		service.addItem = function(item){
-			$http.post('api/list/item', item).then(function(res){
+			$http.post('/api/item', item).then(function(res){
 				itemAdded();
 			});
 		};

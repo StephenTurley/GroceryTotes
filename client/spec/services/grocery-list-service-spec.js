@@ -27,7 +27,7 @@ describe('GroceryListService', function(){
 		$httpBackend.when('GET', '/api/list')
 					.respond(mockList);
 					
-		$httpBackend.when('POST', 'api/list/item')
+		$httpBackend.when('POST', '/api/item')
 					.respond(mockItem);
 					
 		spyOn($rootScope,'$broadcast');

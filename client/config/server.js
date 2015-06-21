@@ -28,7 +28,7 @@ module.exports = {
         res.json(items);
       });
       
-      app.post('/api/list/item', function(req, res){
+      app.post('/api/item', function(req, res){
         items.push(req.body);
         res.json({name: "stub"});
       });
