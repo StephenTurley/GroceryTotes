@@ -30,12 +30,14 @@ describe('api/', function(){
 			});
 		});
 		describe('item/', function(){
-			xit('POST should resopond with item added and 200', function(done){
+			var item = { name: 'foo'};
+			it('POST should resopond with item added and 200', function(done){
 				request(app)
-				.post('/api/item', { name: 'foo'})
+				.post('/api/item')
+				.send(item)
 				.set('Accept', 'application/json')
 				.expect(200)
-				.expect({ name: 'foo'})
+				.expect(JSON.stringify(item))
 				.end(function(err, res){
 					detectError(err, done);
 				});

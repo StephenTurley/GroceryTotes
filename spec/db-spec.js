@@ -2,7 +2,7 @@ var db = require('../db');
 
 describe('db', function(){
 	var item = { name: 'foo' };
-	
+
 	afterEach(function(){
 		db.dropCollection();
 	});
@@ -31,6 +31,16 @@ describe('db', function(){
 			
 			expect(list).toContain(item);
 			expect(list.length).toBe(1);
+		});
+		
+		it('should execute callback', function(){
+			var itemReturned = {};
+			
+			db.addItem(item, function(item){
+				itemReturned = item;
+			});
+			
+			expect(itemReturned).toEqual(item);
 		});
 	});
 	
