@@ -1,15 +1,18 @@
 describe('ItemController', function(){
 	var $controller;
 	var $scope;
+	var $rootScope;
 	var groceryList;
-	var deffered; 
+	var deffered;
+
 	
 	beforeEach(function(){
 		module('app');
 	});
 	
-	beforeEach(inject(function(_$controller_, $q){
+	beforeEach(inject(function(_$controller_, _$rootScope_, $q){
 		$controller = _$controller_;
+		$rootScope = _$rootScope_;
 		deffered = $q.defer();
 		$scope = {};
 		groceryList = {
@@ -29,7 +32,7 @@ describe('ItemController', function(){
 	});
 	
 	describe('addItem', function(){
-		
+		var item = {name: 'foo' };
 		
 		it('should define item with empty name', function(){
 			expect($scope.item.name).toBe('');
@@ -38,10 +41,19 @@ describe('ItemController', function(){
 		
 		it('should call groceryList.addItem', function(){
 			$scope.item.name = 'foo';
-			var item = {name: 'foo' };
+			
 			$scope.addItem();
 			
 			expect(groceryList.addItem).toHaveBeenCalledWith(item);
+		});
+		
+		it('should clear item on itemAdded event', function(){
+			$scope.item = item;
+			$rootScope.$broadcast('itemAdded');
+			$rootScope.$digest();
+			
+			expect($scope.item.name).toBe('');
+			
 		});
 	});
 	

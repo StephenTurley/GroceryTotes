@@ -18,16 +18,19 @@ module.exports = {
     //   res.json({ message: "OK, "+req.params.message });
     // });
     
-    app.get('/api/list', function(req, res){
-      res.json([
-        {name: "stub1"},
-        {name: "stub2"},
-        {name: "stub3"}
-      ]);
-    });
+     var items = [
+          {name: "stub1"},
+          {name: "stub2"},
+          {name: "stub3"}
+        ];
     
-    app.post('/api/list/item', function(req, res){
-      return req.data;
-    });
+      app.get('/api/list', function(req, res){
+        res.json(items);
+      });
+      
+      app.post('/api/list/item', function(req, res){
+        items.push(req.body);
+        res.json({name: "stub"});
+      });
   }
 };
