@@ -35,12 +35,12 @@ describe('ItemController', function(){
 		var item = {name: 'foo' };
 		
 		it('should define item with empty name', function(){
-			expect($scope.item.name).toBe('');
+			expect($scope.name).toBe('');
 		});
 		
 		
 		it('should call groceryList.addItem', function(){
-			$scope.item.name = 'foo';
+			$scope.name = 'foo';
 			
 			$scope.addItem();
 			
@@ -52,7 +52,7 @@ describe('ItemController', function(){
 			$rootScope.$broadcast('itemAdded');
 			$rootScope.$digest();
 			
-			expect($scope.item.name).toBe('');
+			expect($scope.name).toBe('');
 			
 		});
 	});

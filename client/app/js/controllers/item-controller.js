@@ -3,13 +3,16 @@ angular.module('app').controller('ItemController',['$scope', '$rootScope', 'groc
 		
 		var emptyItem = { name: ''};
 		
-		$scope.item = emptyItem;
+		$scope.name = emptyItem.name;
 		
 		$scope.addItem = function(){
-			groceryList.addItem($scope.item);
+			var item = {
+				name: $scope.name	
+			};
+			groceryList.addItem(item);
 		};
 		
 		$rootScope.$on('itemAdded', function(){
-			$scope.item = emptyItem;
+			$scope.name = emptyItem.name;
 		});
 	}]);

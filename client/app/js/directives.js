@@ -3,6 +3,10 @@ angular.module('app')
 		return {
 			restrict: 'E',
 			templateUrl: 'item-form.html',
-			controller: 'ItemController'
+			controller: 'ItemController',
+			scope: {
+				name: '@',
+				addItem: '&'
+			}
 		};
 	});
