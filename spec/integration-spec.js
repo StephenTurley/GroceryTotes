@@ -1,11 +1,12 @@
+/// <reference path="../typings/jasmine/jasmine.d.ts"/>
 var request = require('supertest');
 
 var app = require('../app');
 
 
-describe('GET /', function(){
+describe('/', function(){
 	
-	it(' should repsond with 200', function(done){
+	it('should repsond with 200', function(done){
 		request(app)
 		.get('/')
 		.expect(200)
@@ -16,9 +17,9 @@ describe('GET /', function(){
 	
 });
 
-describe('GET api/', function(){
-	describe('list', function(){
-		it('should respond with json', function(done){
+describe('api/', function(){
+	describe('list/', function(){
+		it('GET should respond with json and 200', function(done){
 			request(app)
 			.get('/api/list')
 			.set('Accept', 'application/json')
@@ -26,6 +27,20 @@ describe('GET api/', function(){
 			.expect('Content-Type', /json/)
 			.end(function(err, res){
 				detectError(err, done);
+			});
+		});
+		describe('item/', function(){
+			var item = { name: 'foo'};
+			it('POST should resopond with item added and 200', function(done){
+				request(app)
+				.post('/api/item')
+				.send(item)
+				.set('Accept', 'application/json')
+				.expect(200)
+				.expect(JSON.stringify(item))
+				.end(function(err, res){
+					detectError(err, done);
+				});
 			});
 		});
 	});

@@ -13,7 +13,11 @@ describe('index', function(){
 		browser.assert.success();		
 	});
 	
-	it('grocery list should contain items', function(){
-		browser.assert.elements('li.item', 3);
+	it('grocery list should contain items', function(done){
+		browser.fill('input[name=iName]', "fooo");
+		browser.pressButton('input[value=add]', function(){
+			browser.assert.text('li.item', "fooo");
+			done();
+		});
 	});
 });

@@ -1,10 +1,27 @@
-var list = require('../../../routes/api/list');
+var proxyquire = require('proxyquire');
+var mockDb;
 
 var mockReq = {};
 var mockRes = {
     setHeader : function(){},
     send : function(){}
 };
+
+var mockList = [
+    { name: 'foo' },
+    { name: 'bar' }
+]
+
+mockDb = {
+	addItem: function(item, callback){
+		callback(item);
+	},
+	getList: function(){
+		return mockList;
+	}
+};
+
+var list = proxyquire('../../../routes/api/list', {'../../db': mockDb });
 
 describe('list api', function(){
     
@@ -22,14 +39,12 @@ describe('list api', function(){
             expect(mockRes.setHeader).toHaveBeenCalledWith('Content-Type', 'application/json');
         });
         
-        it('should respond with a list of 3 items', function(){
-            spyOn(mockRes, 'send');
+        it('should response from db getList', function(done){
+            spyOn(mockRes, 'send').and.callFake(done);
             
             list.getList(mockReq, mockRes);
             
-            var responseJson = mockRes.send.calls.mostRecent().args[0];
-
-            expect(responseJson.length).toBe(3);
+            expect(mockRes.send).toHaveBeenCalledWith(mockList);
         });
     });
 });

@@ -1,3 +1,4 @@
+/// <reference path="../../../typings/angularjs/angular.d.ts"/>
 describe('GroceryListService', function(){
 	
 	var groceryList;
@@ -5,10 +6,14 @@ describe('GroceryListService', function(){
 	var $httpBackend;
 	
 	var mockList = [
-			{name: 'bread'},
-			{name: 'milk'},
-			{name: 'eggs'}
-		];
+		{ name: 'bread' },
+		{ name: 'milk' },
+		{ name: 'eggs' }
+	];
+		
+	var mockItem = { 
+		name : 'foo'
+	};
 	
 	beforeEach(function(){
 		module('app');
@@ -21,10 +26,19 @@ describe('GroceryListService', function(){
 		
 		$httpBackend.when('GET', '/api/list')
 					.respond(mockList);
+					
+		$httpBackend.when('POST', '/api/item')
+					.respond(mockItem);
+					
+		spyOn($rootScope,'$broadcast');
 		
 	});
 	
-	describe('groceryList.fetchList', function(){
+	afterEach(function(){
+		$rootScope.$broadcast.calls = [];
+	});
+	
+	describe('fetchList', function(){
 		
 		it('should be a function', function(){
 			expect(angular.isFunction(groceryList.fetchList)).toBe(true);
@@ -45,4 +59,28 @@ describe('GroceryListService', function(){
 			expect(items).toEqual(mockList);
 		});
 	});
+	
+	describe('addItem', function(){
+		
+		it('should be a function', function(){
+			expect(angular.isFunction(groceryList.addItem)).toBe(true);
+		});
+		
+		it('should not emit itemAdded event until promise is resolved', function(){
+			var result = groceryList.addItem(mockItem);
+			
+			expect($rootScope.$broadcast).not.toHaveBeenCalled();
+		});
+		
+		it('should broadcast itemAdded event', function(){
+			var result = groceryList.addItem(mockItem);
+			$httpBackend.flush();
+			
+			$rootScope.$digest();
+			
+			expect($rootScope.$broadcast).toHaveBeenCalledWith('itemAdded');
+		});
+		
+	});
+	
 });

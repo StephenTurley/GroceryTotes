@@ -1,10 +1,6 @@
-var list = [
-	{name : 'bread'},
-	{name : 'milk'},
-	{name : 'beer'}
-];
+var db = require('../../db');
 
 exports.getList = function(req, res){
 	res.setHeader('Content-Type', 'application/json');
-	res.send(list);
+	res.send(db.getList());	
 };
