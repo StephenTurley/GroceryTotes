@@ -1,6 +1,9 @@
 angular.module('app').controller('ItemController',['$scope', 'groceryList',
 	function($scope, groceryList){
-		$scope.addItem = function(item){
-			groceryList.addItem(item);
+		$scope.item = {
+			name: ''
+		};
+		$scope.addItem = function(){
+			groceryList.addItem($scope.item);
 		};
 	}]);

@@ -29,10 +29,17 @@ describe('ItemController', function(){
 	});
 	
 	describe('addItem', function(){
-		var item = { name: "foo" };
+		
+		
+		it('should define item with empty name', function(){
+			expect($scope.item.name).toBe('');
+		});
+		
 		
 		it('should call groceryList.addItem', function(){
-			$scope.addItem(item);
+			$scope.item.name = 'foo';
+			var item = {name: 'foo' };
+			$scope.addItem();
 			
 			expect(groceryList.addItem).toHaveBeenCalledWith(item);
 		});

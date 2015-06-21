@@ -25,5 +25,9 @@ module.exports = {
         {name: "stub3"}
       ]);
     });
+    
+    app.post('/api/list/item', function(req, res){
+      return req.data;
+    });
   }
 };
