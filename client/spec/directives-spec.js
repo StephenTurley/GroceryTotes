@@ -41,7 +41,7 @@ describe('directives', function() {
       
       element.find('input[name="iName"]').val('foo').trigger('input');
      
-      element.find('input[value="add"]').click();
+      element.find('input[value="add"]').submit();
       
       $scope.$digest();
       expect(elementScope.name).toBe('foo');
